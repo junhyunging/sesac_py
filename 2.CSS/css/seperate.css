@@ -1,0 +1,21 @@
+h1 {
+  color: blue;
+}
+h2 {
+  color: greenyellow;
+}
+h3 {
+  color: skyblue;
+}
+.color {
+  background-color: chartreuse;
+  border: 3px solid blue;
+}
+#color1 {
+  background-color: beige;
+  border: 3px dotted black;
+}
+.color2 {
+  border: 3px dashed skyblue;
+  width: 500px;
+}

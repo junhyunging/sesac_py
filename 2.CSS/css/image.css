@@ -1,0 +1,16 @@
+.menu p {
+  display: inline-block;
+  width: 100px;
+  border: 1px solid green;
+  text-align: center;
+}
+#imz1 {
+  float: left; /*뜨다 (글자 위로)*/
+  margin: 20px;
+}
+
+#imz2 {
+  float: right;
+  width: 450px;
+  padding: 20px;
+}
