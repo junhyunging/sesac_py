@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>씨에스에스</title>
+    <style>
+      /*CSS 셀렉터란 ?? 원하는 html요소를 선택하는 방법 -3가지 (tag,class,id)*/
+      /*같은 depth/level (계층구조상에서) 늦게 적용되는게 살아남는것...
+      tag,class,id 냐는.. 계층이 다름...
+      좀더 포괄적으로 넓게 적용되는게 있고 디테일 하게 적용되는게 잇음음
+      id>class>tag*/
+      h1 {
+        color: blue;
+      }
+      h2 {
+        color: greenyellow;
+      }
+      h3 {
+        color: skyblue;
+      }
+      .color {
+        background-color: chartreuse;
+        border: 3px solid blue;
+      }
+      #color1 {
+        background-color: beige;
+        border: 3px dotted black;
+      }
+      .color2 {
+        border: 3px dashed skyblue;
+        width: 500px;
+      }
+    </style>
+    <!--16진수로 표현-->
+  </head>
+  <body>
+    <h1>헤딩1</h1>
+    <h2>헤딩2</h2>
+    <h3>헤딩3</h3>
+    <p class="color">집가고싶다.집가고싶다.집가고싶다1</p>
+    <p id="color1">집가고싶다.집가고싶다.집가고싶다2</p>
+    <p class="color2">집가고싶다.집가고싶다.집가고싶다3</p>
+    <p>집가고싶다.집가고싶다.집가고싶다4</p>
+    <!--id값은 곂치면 안 됨-->
+    <p>집가고싶다.집가고싶다.집가고싶다5</p>
+  </body>
+</html>
