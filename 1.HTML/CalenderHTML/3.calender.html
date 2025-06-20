@@ -6,6 +6,9 @@
     <style>
       th {
         width: 14%;
+        background-color: rgb(227, 227, 226);
+        padding: 8px;
+        border: 1px solid white;
       }
       .header {
         display: flex;
@@ -13,86 +16,102 @@
         align-items: center;
         padding: 0 20px;
       }
+      .header a {
+        text-decoration: none;
+        color: black;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      tr td {
+        padding: 8px;
+        text-align: center;
+      }
+      tr td:first-child {
+        color: red;
+      }
+      tr td:last-child {
+        color: blue;
+      }
+      /*border-collapse: collapse;*/
+      /*th:first-child 첫칸 요소 다 선택*/
+      .img {
+        margin-left: 450px;
+      }
     </style>
   </head>
   <body>
-    <center>
-      <h1>포토 캘린더</h1>
-      <div class="header">
-        <a href="2.calender.html">◀2월</a>
-        <h3>2025년 3월</h3>
-        <a href="4.calender.html">4월▶</a>
-      </div>
-      <img src="../images/3월.jpg" alt="3월" / width="45%">
-      <table
-        border="1"
-        style="background-color: rgb(151, 243, 249)"
-        width="100%"
-      >
-        <tr>
-          <th style="color: red">일</th>
-          <th>월</th>
-          <th>화</th>
-          <th>수</th>
-          <th>목</th>
-          <th>금</th>
-          <th>토</th>
-        </tr>
-        <tr>
-          <td align="center" style="color: gray">24</td>
-          <td align="center" style="color: gray">25</td>
-          <td align="center" style="color: gray">26</td>
-          <td align="center" style="color: gray">27</td>
-          <td align="center" style="color: gray">28</td>
-          <td align="center" style="color: gray">28</td>
-          <td align="center" style="color: blue">1</td>
-        </tr>
-        <tr>
-          <td align="center" style="color: red">2</td>
-          <td align="center">3</td>
-          <td align="center">4</td>
-          <td align="center">5</td>
-          <td align="center">6</td>
-          <td align="center">7</td>
-          <td align="center" style="color: blue">8</td>
-        </tr>
-        <tr>
-          <td align="center" style="color: red">9</td>
-          <td align="center">10</td>
-          <td align="center">11</td>
-          <td align="center">12</td>
-          <td align="center">13</td>
-          <td align="center">14</td>
-          <td align="center" style="color: blue">15</td>
-        </tr>
-        <tr>
-          <td align="center" style="color: red">16</td>
-          <td align="center">17</td>
-          <td align="center">18</td>
-          <td align="center">19</td>
-          <td align="center">20</td>
-          <td align="center">21</td>
-          <td align="center" style="color: blue">22</td>
-        </tr>
-        <tr>
-          <td align="center" style="color: red">23</td>
-          <td align="center">24</td>
-          <td align="center">25</td>
-          <td align="center">26</td>
-          <td align="center">27</td>
-          <td align="center">28</td>
-          <td align="center" style="color: blue">29</td>
-        </tr>
-        <tr>
-          <td align="center" style="color: red">30</td>
-          <td align="center">31</td>
-          <td align="center" style="color: gray"></td>
-          <td align="center" style="color: gray"></td>
-          <td align="center" style="color: gray"></td>
-          <td align="center" style="color: gray"></td>
-          <td align="center" style="color: gray"></td>
-        </tr>
-      </table>
-    </center>
+    <h1>포토 캘린더</h1>
+    <div class="header">
+      <a href="2.calender.html">◀2월</a>
+      <h3>2025년 3월</h3>
+      <a href="4.calender.html">4월▶</a>
+    </div>
+    <img class="img" src="../images/3월.jpg" alt="3월" / width="45%">
+    <table width="100%">
+      <tr>
+        <th>일</th>
+        <th>월</th>
+        <th>화</th>
+        <th>수</th>
+        <th>목</th>
+        <th>금</th>
+        <th>토</th>
+      </tr>
+      <tr>
+        <td align="center" style="color: gray">24</td>
+        <td align="center" style="color: gray">25</td>
+        <td align="center" style="color: gray">26</td>
+        <td align="center" style="color: gray">27</td>
+        <td align="center" style="color: gray">28</td>
+        <td align="center" style="color: gray">28</td>
+        <td align="center">1</td>
+      </tr>
+      <tr>
+        <td align="center">2</td>
+        <td align="center">3</td>
+        <td align="center">4</td>
+        <td align="center">5</td>
+        <td align="center">6</td>
+        <td align="center">7</td>
+        <td align="center">8</td>
+      </tr>
+      <tr>
+        <td align="center">9</td>
+        <td align="center">10</td>
+        <td align="center">11</td>
+        <td align="center">12</td>
+        <td align="center">13</td>
+        <td align="center">14</td>
+        <td align="center">15</td>
+      </tr>
+      <tr>
+        <td align="center">16</td>
+        <td align="center">17</td>
+        <td align="center">18</td>
+        <td align="center">19</td>
+        <td align="center">20</td>
+        <td align="center">21</td>
+        <td align="center">22</td>
+      </tr>
+      <tr>
+        <td align="center">23</td>
+        <td align="center">24</td>
+        <td align="center">25</td>
+        <td align="center">26</td>
+        <td align="center">27</td>
+        <td align="center">28</td>
+        <td align="center">29</td>
+      </tr>
+      <tr>
+        <td align="center">30</td>
+        <td align="center">31</td>
+        <td align="center" style="color: gray"></td>
+        <td align="center" style="color: gray"></td>
+        <td align="center" style="color: gray"></td>
+        <td align="center" style="color: gray"></td>
+        <td align="center" style="color: gray"></td>
+      </tr>
+    </table>
   </body>
 </html>
