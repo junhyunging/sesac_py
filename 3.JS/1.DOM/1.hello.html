@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      /*스타일 영억*/
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <button onclick="sayHello();">헬로우</button>
+    <button onclick="sayGoodbye()">작별</button>
+    <script>
+      //여기는 JS영역
+      function sayHello() {
+        console.log("안녕 콘솔");
+      }
+      function sayGoodbye() {
+        for (let i = 0; i < 5; i++) {
+          document.write("h" + "굳바이 콘솔");
+          document.write(`<H${i}>굳바이 콘솔<H${i}>`);
+        }
+      }
+    </script>
+  </body>
+</html>

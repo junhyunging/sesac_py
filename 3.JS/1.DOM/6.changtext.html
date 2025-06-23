@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="myText">이 텍스트의 색상을 변경해보시오</p>
+    <button onclick="changeTextColot()">텍스트 색상변경</button>
+    <script>
+      function changeTextColot() {
+        let textElement = document.getElementById("myText");
+        if (textElement.style.color != "red") {
+          textElement.style.color = "red";
+        } else if (textElement.style.color != "blue") {
+          textElement.style.color = "blue";
+        }
+
+        //누를때마다 빨강->파랑->빨강
+      }
+    </script>
+  </body>
+</html>

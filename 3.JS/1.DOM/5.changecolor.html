@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="randomcolor()">배경색 변경하기</button>
+  </body>
+  <script>
+    function changecolor() {
+      if (document.body.style.backgroundColor != "red") {
+        document.body.style.backgroundColor = "red";
+      } else document.body.style.backgroundColor = "white";
+    }
+
+    let currentIndex = 0;
+    function changecolor2() {
+      const colors = ["red", "green", "blue"];
+
+      document.body.style.backgroundColor = colors[currentIndex];
+      currentIndex += 1;
+
+      if (currentIndex === colors.length) {
+        currentIndex = 0;
+      }
+
+      // if (document.body.style.backgroundColor === colors[0]) {
+      //  document.body.style.backgroundColor = colors[1];
+      // } else if (document.body.style.backgroundColor === colors[1]) {
+      //  document.body.style.backgroundColor = colors[2];
+      //} else if (document.body.style.backgroundColor === colors[2]) {
+      //  document.body.style.backgroundColor = colors[0];
+      //} else {
+      // document.body.style.backgroundColor = colors[0];
+      // }
+    }
+
+    function changecolor3() {
+      const colors = ["red", "green", "blue"];
+      document.body.style.backgroundColor = colors[currentIndex];
+      currentIndex = (currentIndex + 1) % colors.length;
+    }
+
+    // 숙제. 랜덤 색성으로.. 클릭할때마다 .. 바꾸기
+    function randomcolor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      const color = `rgb(${r},${g},${b})`;
+      document.body.style.backgroundColor = color;
+    }
+  </script>
+</html>

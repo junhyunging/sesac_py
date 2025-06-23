@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>셀1</td>
+        <td>셀2</td>
+        <td>셀3</td>
+      </tr>
+      <tr>
+        <td>셀4</td>
+        <td>셀5</td>
+        <td>셀6</td>
+      </tr>
+      <tr>
+        <td>셀7</td>
+        <td>셀8</td>
+        <td>셀9</td>
+      </tr>
+    </table>
+    <button onclick="changeAllCellColor()">색 색상 모두 변경하기</button>
+    <button onclick="changeCellColor()">색 색상 짝수만 변경하기</button>
+    <button onclick="changecellColor()">색 색상 홀수만 변경하기</button>
+    <script>
+      function changeAllCellColor() {
+        let cells = document.getElementsByTagName("td");
+        // legacy 한 odl for 루프 스타일
+        //  for (let i = 0; i < cells.length; i++) {
+        //하드코딩 하는 변수는 좋지 않은것
+        //  cells[i].style.backgroundColor = "lightblue";
+        // }
+
+        //modern 한 for 루프 스타일
+        for (let cell of cells) {
+          cell.style.backgroundColor = "lightblue";
+        }
+        // 참고 : 왜 forEach는 안될까?
+        // forEach는 Array라는 Class가 가지고 있는 함수임.
+        //근데, 지금의 cells는 Array가 아니고 htmlCollection 이라는 class로 만들어져 있음
+        // 그래서,, foreach함수가 없어서... 내가 적용하고 싶으면 강제로 casting을 해야함
+        //  Array.from(cells).forEach((cell) => {
+        //  cell.style.backgroundColor = "lightblue";
+        // });
+      }
+
+      function changeCellColor() {
+        let cells = document.getElementsByTagName("td");
+        for (let i = 0; i < cells.length; i++) {
+          if (i % 2 === 1) {
+            cells[i].style.backgroundColor = "blue";
+          }
+        }
+      }
+
+      function changecellColor() {
+        let cells = document.getElementsByTagName("td");
+        for (let i = 0; i < cells.length; i++) {
+          if (i % 2 === 0) {
+            cells[i].style.backgroundColor = "blue";
+          }
+        }
+      }
+      //숙제.. 홀짝은 어떻게 구현할까
+    </script>
+  </body>
+</html>
