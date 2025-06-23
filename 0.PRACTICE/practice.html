@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--랜덤으로 색 바꾸기-->
+    <div>
+      <p id="text">문장 색 바꾸기</p>
+      <button onclick="color()">색 바꾸기</button>
+    </div>
+
+    <!--홀짝 판별하기-->
+    <div>
+      <input type="text" id="num" placeholder="숫자를 입력하세용" />
+      <button onclick="check()">판별</button>
+      <div id="result"></div>
+    </div>
+
+    <!--구구단 출력하기-->
+    <div>
+      <input type="number" id="dan" placeholder="단 입력" />
+      <button onclick="print()">구구단 출력</button>
+      <div id="result"></div>
+    </div>
+
+    <!--글자 키우기-->
+    <div>
+      <p id="bigText">글씨</p>
+      <button onclick="big()">커지기</button>
+    </div>
+
+    <script>
+      //랜덤으로 색 바꾸기
+      function color() {
+        let textColor = document.getElementById("text");
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+
+        textColor.style.color = `rgb(${r},${g},${b})`;
+      }
+
+      //홀짝 판별
+      function check() {
+        let num = Number(document.getElementById("num").value);
+        let result = document.getElementById("result");
+        if (num % 2 == 0) {
+          result.innerText = "짝수입니다.";
+        } else {
+          result.innerText = "홀수입니다.";
+        }
+      }
+
+      //구구단
+      function print() {
+        let dan = document.getElementById("dan").value;
+        let result = document.getElementById("result");
+        result.innerHTML = "";
+        for (let i = 1; i <= 9; i++) {
+          result.innerHTML += `${dan} X ${i} = ${dan * i}<br>`;
+        }
+      }
+
+      function big() {
+        let currentText = document.getElementById("bigText");
+        let currentSize = parseInt(currentText.style.fontSize || "16");
+        let bigSize = currentSize + 4;
+        currentText.style.fontSize = bigSize + "px";
+      }
+    </script>
+  </body>
+</html>
