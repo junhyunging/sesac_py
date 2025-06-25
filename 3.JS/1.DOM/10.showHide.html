@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      #myDiv {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        margin-top: 20px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showHideDiv2()">숨겨진 영역 보여주기</button>
+    <div id="myDiv">이것이 바로 숨겨진 DIV입니다.</div>
+
+    <script>
+      function showHideDiv() {
+        const divElem = document.getElementById("myDiv");
+        //const divElem = document.querySelector("#myDiv");
+        //css초기값에 따라서 반대 버그가 생길수도 있음
+        if (divElem.style.display !== "block") {
+          divElem.style.display = "block";
+        } else {
+          divElem.style.display = "none";
+        }
+      }
+
+      function showHideDiv2() {
+        const divElem = document.querySelector("#myDiv");
+        const divElemStyle = window.getComputedStyle(divElem).display; // 브라우저에게 랜더링이 다 끝난 시점의 스타일을 알려달라고 요청한다.
+        if (divElemStyle === "none") {
+          divElem.style.display = "block";
+        } else {
+          divElem.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -3,9 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+        height: 100vh; /*viewport,높이의 단위*/
+        display: flex;
+        flex-direction: column; /*위에서 아래로 정렬*/
+        justify-content: center;
+        align-items: center; /*세로로 센터*/
+      }
+      #colorCode {
+        margin-top: 30px;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 20px;
+        background-color: rgb(255, 255, 255, 0.7);
+        border-radius: 50px;
+        border: 1px solid black;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <button onclick="randomcolor()">배경색 변경하기</button>
+    <button onclick="changeRandomColor2()">배경색 변경하기</button>
+    <div id="colorCode">색상 코드는 여기</div>
   </body>
   <script>
     function changecolor() {
@@ -49,6 +74,40 @@
       const b = Math.floor(Math.random() * 256);
       const color = `rgb(${r},${g},${b})`;
       document.body.style.backgroundColor = color;
+      //floor 소수점 버림
+      //cell 소수점 올림
+      //round 반올림
+    }
+
+    // 강사님 풀이
+    // 랜덤의 범위 확인하기 0 <= x <1
+    // 랜덤을 통해서 내가 원하는 방법을 이해 (0~255)
+    // 반올림,올림,내림
+    // 생성된 숫자를 문자열로 (진수)
+    // 자리수 맞추기 padStart(2,"O")
+    function changeRandomColor() {
+      const r = Math.floor(Math.random() * 256)
+        .toString(16)
+        .padStart(2, "0");
+      const g = Math.floor(Math.random() * 256)
+        .toString(16)
+        .padStart(2, "0");
+      const b = Math.floor(Math.random() * 256)
+        .toString(16)
+        .padStart(2, "0");
+      document.body.style.backgroundColor = "#" + r + g + b;
+    }
+    function changeRandomColor2() {
+      const rrggbb = Math.floor(Math.random() * 16777216)
+        .toString(16)
+        .padStart(6, "0");
+      document.body.style.backgroundColor = "#" + rrggbb;
+      displayColor(rrggbb);
+    }
+
+    function displayColor(color) {
+      const colorDisplay = document.getElementById("colorCode");
+      colorDisplay.innerHTML = color;
     }
   </script>
 </html>

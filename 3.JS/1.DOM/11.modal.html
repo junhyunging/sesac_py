@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../1.DOM/css/modal.css" />
+    <!--defer DOM다 불러오고 실행-->
+  </head>
+  <body>
+    <h1>헤딩 내용 암거나</h1>
+    <p>
+      본문 내용 아무거나 Lorem ipsum dolor sit amet, consectetur adipisicing
+      elit. Quae eum consequuntur totam nihil exercitationem officia iure, quo
+      quod tempora consequatur perferendis molestiae accusantium culpa quibusdam
+      repudiandae minima iusto sequi perspiciatis.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi eligendi
+      illo tempore ex nobis ratione optio. Cupiditate animi molestiae maxime,
+      adipisci exercitationem, deleniti inventore labore fuga dolorem nostrum
+      laboriosam quis.
+    </p>
+    <button id="open">모달창 열기</button>
+
+    <div class="modal-wrapper" style="display: none">
+      <div class="modal">
+        <div class="modal-title">모달 타이틀</div>
+        <p>모달 본문 내용</p>
+        <div class="close-wrapper">
+          <button id="close">닫기</button>
+        </div>
+      </div>
+    </div>
+    <script src="../1.DOM/js/modal.js" defer></script>
+  </body>
+</html>
