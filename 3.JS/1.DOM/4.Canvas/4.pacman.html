@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="400" height="300"></canvas>
+
+    <script>
+      const canvas = document.getElementById("myCanvas");
+      const context = canvas.getContext("2d"); //그림을 그릴 공간에 접근하는 포인터
+
+      let x = 200;
+      let y = 150;
+      function drawPacman() {
+        context.fillStyle = "yellow";
+        context.beginPath();
+        context.moveTo(x, y); // 시작점
+        const startAngle = 0.2 * Math.PI; //대충 ~ 40도 전후
+        const endAngle = 1.8 * Math.PI; //대충~ 320도 전후
+        context.arc(x, y, 30, startAngle, endAngle);
+        context.stroke();
+        context.fill();
+        context.closePath();
+      }
+      function animate() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        drawPacman();
+        movePacman();
+        bouns();
+
+        requestAnimationFrame(animate);
+      }
+
+      function movePacman() {}
+
+      //미션. 이벤트를 등록해서 x,y를 이동하세요
+      // 1.키 누를때마다 해당 방향으로 x,y 좌표를 내가 정한 사이즈만큼 (10) 이동한다.
+      // 2. 키를 누를때마다 해당 방향으로 연속적으로 이동한다.
+      document.addEventListener("keydown", handleKeyDown);
+      function handleKeyDown(e) {
+        switch (e.key) {
+          case "ArrowUp":
+            y -= 10;
+            break;
+          case "ArrowDown":
+            y += 10;
+            break;
+          case "ArrowLeft":
+            x -= 10;
+            break;
+          case "ArrowRight":
+            x += 10;
+            break;
+        }
+      }
+
+      //벽에 닿으면 더이상 이동하지 않도록
+      function bouns() {
+        if (x < 30) {
+          x = 30;
+        } else if (x > canvas.width - 30) {
+          x = canvas.width - 30;
+        } else if (y < 30) {
+          y = 30;
+        } else if (y > canvas.height - 30) {
+          y = canvas.height - 30;
+        }
+      }
+
+      animate();
+    </script>
+  </body>
+</html>
