@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*약간 이쁘게 디자인 해보기*/
+      .table {
+        border: solid 1px blanchedalmond;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>User Information</h1>
+    <form>
+      <input type="text" name="name" placeholder="이름 입력" />
+      <input type="number" name="age" placeholder="나이를 입력하세요" />
+      <input type="text" name="phone" placeholder="번호" />
+      <input type="submit" value="입력" />
+    </form>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>phone</th>
+      </tr>
+      {% for user in users %}
+      <tr>
+        <td>{{user['name']}}</td>
+        <td>{{user['age']}}</td>
+        <td>{{user['phone']}}</td>
+      </tr>
+      {%endfor%}
+    </table>
+  </body>
+</html>

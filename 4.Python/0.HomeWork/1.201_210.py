@@ -74,6 +74,35 @@ def print_keys(dic):
         
 print_keys ({"이름":"김말똥", "나이":30, "성별":0})
 
+import datetime
+
+now = datetime.datetime.now()
+
+today = datetime.datetime.today()
+
+myNow = (now-datetime.datetime.today.year+1)
+
+
+print(myNow)
+
+print(now)
+
+def simple_interest(num):
+    for number in num.keys():
+        if number>10
+        print(f"{number}")
+        
+        
+    
+    
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {%if page%}
+    <h1>User List (page{{page}})</h1>
+    {%else%}
+    <h1>User List 전체</h1>
+    {%endif%}
+    <ol>
+      {%for u in users%}
+      <li>{{u['name'],u['age'],u['phone']}}</li>
+      {% endfor %}
+    </ol>
+
+    {%if page%}
+    <div>
+      {%if page > 1%}
+      <a href="/?pages={{page-1}}">이전</a>
+      {%endif%} {%if page < 10%}
+      <a href="/?pages={{page+1}}">다음</a>
+      {%endif%}
+    </div>
+    {%endif%}
+  </body>
+</html>
