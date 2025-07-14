@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #grandparent {
+        padding: 50px;
+        background-color: aqua;
+      }
+      #parent {
+        padding: 50px;
+        background-color: rgb(224, 255, 255);
+      }
+      #child {
+        padding: 50px;
+        background-color: rgb(223, 250, 250);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="grandparent">
+      조상
+      <div id="parent">
+        부모
+        <div id="child">자식</div>
+      </div>
+    </div>
+    <script>
+      const grandparent = document.getElementById("grandparent");
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+
+      //계층구조에 맞게... 내가 포함된 나를 포함한 부모로, 또 그 부모로 이벤트가 전달되는 현상을?? 이벤트 버블링(bubbling) 이라고 부름
+      grandparent.addEventListener("click", () => {
+        alert("grandparent 클릭댐");
+      });
+      parent.addEventListener("click", () => {
+        alert("parent 클릭댐");
+        event.stopPropagation(); //이벤트 내가 해결했으니, 더이상 전파하지마 !
+      });
+      child.addEventListener("click", () => {
+        alert("child 클릭댐");
+        event.stopPropagation();
+      });
+    </script>
+  </body>
+</html>

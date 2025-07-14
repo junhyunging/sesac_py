@@ -1,9 +1,9 @@
 import uuid
 import datetime
 
-from generators.name_generator import NameGenerator
-from generators.gender_generator import GenderGenerator
-from generators.birthday_generator import BirthdayGenerator
+from generators.user.name_generator import NameGenerator
+from generators.user.gender_generator import GenderGenerator
+from generators.user.birthday_generator import BirthdayGenerator
 
 class UserGenerator:
     def __init__(self,last_name_file,first_name_file):

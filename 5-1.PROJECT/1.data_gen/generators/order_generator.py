@@ -1,6 +1,6 @@
 import uuid
 import random
-from generators.date_generator import DateTimeGenerator
+from generators.user.date_generator import DateTimeGenerator
 
 class OrderGenerator:
     def __init__(self, user_id,store_id): #uuid 가져오기

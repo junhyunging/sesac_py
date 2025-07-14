@@ -1,7 +1,7 @@
 import uuid
-from generators.food_generator import FoodGenerator
-from generators.type_generator import TypeGenerator
-from generators.price_generator import PriceGenerator
+from generators.item.food_generator import FoodGenerator
+from generators.item.type_generator import TypeGenerator
+from generators.item.price_generator import PriceGenerator
 
 class ItemGenerator:
     def __init__(self):

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      #myDiv {
+        width: 100px;
+        height: 100px;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myDiv"></div>
+    <script>
+      const myDiv = document.getElementById("myDiv");
+      myDiv.addEventListener("mouseover", () => {
+        console.log("마우스 올라옴");
+        myDiv.style.backgroundColor = "blue";
+      });
+      myDiv.addEventListener("mouseout", () => {
+        console.log("마우스나감");
+        myDiv.style.backgroundColor = "pink";
+      });
+
+      myDiv.addEventListener("mousemove", (ev) => {
+        console.log(`마우스가 움직임 x=${ev.clientX}, y=${ev.clientY}`);
+        myDiv.style.backgroundColor = "yellow";
+      });
+    </script>
+  </body>
+</html>

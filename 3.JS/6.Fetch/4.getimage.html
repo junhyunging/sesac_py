@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+    미션1. 버튼과 결과를 출력할 빈 공간을 만든다
+    미션2. 버튼을 클릭하면 아래 사이트에 이미지 요청을 한다.
+            https://dog.ceo/api/breeds/image/random
+    미션3. 받아온 결과로 위의 빈 공간에 이미지를 표시한다.
+    미션4. select 이용해서 품종 받아와서 이미지 뜨게하기
+    -->
+    <button id="load">이미지 요청</button>
+    <select id="breed" value=""></select>
+    <button id="breedimg">품종선택</button>
+    <select id="detail" value=""></select>
+
+    <div id="result"></div>
+
+    <!-- 품종선택하면 그 품종에 맞는 동물 나오게하기 -->
+    <script>
+      // 품종 목록을 가져와서 select에 추가
+      // 품종 에 맞는 이미지 를 요청하고 결과에 출력
+      fetch("https://dog.ceo/api/breed/hound/list")
+        .then((response) => response.json())
+        .then((json) => {
+          const details = Object.keys(json.message);
+          const select = document.getElementById("detail");
+
+          details.forEach((detail) => {
+            const option = document.createElement("detail");
+            option.value = detaill;
+            option.textContent = detail;
+            select.appendChild(option);
+          });
+        });
+
+      fetch("https://dog.ceo/api/breeds/list/all")
+        .then((response) => response.json())
+        .then((json) => {
+          const breeds = Object.keys(json.message);
+          const select = document.getElementById("breed");
+
+          breeds.forEach((breed) => {
+            const option = document.createElement("option");
+            option.value = breed;
+            option.textContent = breed;
+            select.appendChild(option);
+          });
+        });
+
+      // 버튼 클릭 시 이미지 요청
+      document.getElementById("breedimg").addEventListener("click", () => {
+        const selectedBreed = document.getElementById("breed").value;
+        fetch(`https://dog.ceo/api/breed/${selectedBreed}/images/random`)
+          .then((response) => response.json())
+          .then((json) => {
+            const imageUrl = json.message;
+            document.getElementById(
+              "result"
+            ).innerHTML = `<img src="${imageUrl}" alt="Dog Image">`;
+          });
+      });
+
+      document.getElementById("load").addEventListener("click", () => {
+        fetch("https://dog.ceo/api/breeds/image/random")
+          .then((response) => response.json())
+          .then((json) => {
+            const imageUrl = json.message;
+            document.getElementById(
+              "result"
+            ).innerHTML = `<img src="${imageUrl}" alt="Dog Image">`;
+          });
+      });
+    </script>
+  </body>
+</html>
